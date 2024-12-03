@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --base-background-color : #fff;
+    --mute-background-color : purple;
+
+    --base-foreground-color : #000;
+    --mute-foreground-color : #fff;
+  }
+
+  .theme-dark{
+    --base-background-color : #000;
+    --mute-background-color : purple;
+
+    --base-foreground-color : #fff;
+    --mute-foreground-color : #000;
+  } 
+}
