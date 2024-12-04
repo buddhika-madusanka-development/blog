@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,17 +9,48 @@
 @layer base {
   :root {
     --base-background-color : #fff;
-    --mute-background-color : purple;
+    --muted-background-color : #800080;
+    --card-background-color : #fff3ff;
 
     --base-foreground-color : #000;
-    --mute-foreground-color : #fff;
+    --muted-foreground-color : #fff;
+
+    --base-title-color : #18043b;
+    --muted-title-color : #3c096c;
+
+    --base-paragraph-color : ;
+    --mute-paragraph-color : ;
+
+    --base-button-background-color : #d26fd2 ;
+    --base-button-text-color : ;
+    --base-button-border-color : ;
+    --base-button-background-hover-color : ;
+    --base-button-text-hover-color : ;
+    --base-button-border-hover-color : ;
+
+    --base-input-background-color : ;
+    --base-input-text-color : ;
+    --base-input-border-color : ;
+    --base-input-background-active-color : ;
+    --base-input-text-active-color : ;
+    --base-input-border-active-color : ;
+
+    --tag-background-color :#d26fd2 ;
+    --tag-text-color : ;
+    --tag-border-color : ;
+    --tag-hover-background-color : ;
+    --tag-hover-text-color : ;
+    --tag-hover-border-color : ;
   }
+}
 
-  .theme-dark{
-    --base-background-color : #000;
-    --mute-background-color : purple;
+body{
+  background-color: var(--base-background-color);
+  color: var(--base-foreground-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
 
-    --base-foreground-color : #fff;
-    --mute-foreground-color : #000;
-  } 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Poppins', serif;
 }
