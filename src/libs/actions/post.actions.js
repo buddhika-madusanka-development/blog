@@ -11,7 +11,7 @@ export const findSingleBlog = async (blog_id) => {
         await connectDB();
 
         // find blog post in the database
-        const blogResponse = await fetch('http://localhost:3000/api/blogs/7c3af41b-bef8-4b06-ac4e-0ec2b9844e35');
+        const blogResponse = await fetch(`http://localhost:3000/api/blogs/${blog_id}`);
 
         if(!blogResponse.ok) {
             throw new Error("Something went wrong in post data fetching...");

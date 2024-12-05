@@ -3,7 +3,7 @@
 import Tag from "@/app/components/Tag";
 import MainTitle from "@/app/components/Titles/MainTitle";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogParagraph from "@/app/components/BlogParagraph";
 
 // Icons import using react icons
@@ -56,14 +56,28 @@ const blog = {
   },
 };
 
-const SinglBlog = ({ post = blog }) => {
+const SinglBlog = () => {
 
+  const [post, setPost] = useState(null);
+  
   const urlParams = useSearchParams();
   const blogId = urlParams.get("blogId");
 
+  useEffect(() => {
+    findSingleBlog(blogId).then((data) => {
+      setPost(data);
+      console.log(data);
+    });
+  }, [blogId]);
+
+  // Render a loading state while `post` is null
+  if (!post) {
+    return <div>Loading...</div>;
+  }
   const author_link = `http://localhost:3000/api/authors/${post.auth_id}`
   const tags = post.tags;
 
+  
   
   return (
     <div>
@@ -122,9 +136,7 @@ const SinglBlog = ({ post = blog }) => {
           {/* blog content */}
           <div className="blog-content mt-8">
             <BlogParagraph
-              paragraphText={
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam optio voluptatum itaque alias consequatur vitae dolor blanditiis laudantium, eligendi facere! Ipsam nobis porro, optio, eveniet dolore quam aut ex, distinctio beatae animi quis. Quisquam voluptatem earum deleniti nesciunt repellat veritatis recusandae soluta quam a consequatur esse officiis iure magnam atque, nemo doloremque animi quae totam adipisci distinctio enim rerum fugit ullam. Nisi illum quae eaque cum, laborum quis possimus recusandae, fuga facilis at quasi illo excepturi sed assumenda aliquam quisquam itaque qui sint. Ipsum voluptates recusandae tempora, praesentium placeat, fuga eos minima, alias dolorum temporibus repellat quaerat iste. Ea quisquam soluta non doloremque ipsam aliquam corrupti nostrum odit molestiae sequi commodi, eos, quam laudantium nemo reprehenderit rem. Voluptates beatae est dolore aperiam dolores vero harum quam consequatur consectetur suscipit doloremque nam facere blanditiis iure natus veniam, vitae cumque debitis laboriosam reprehenderit quod dolorem earum in eius! Eveniet quod in quasi possimus sequi, sunt alias, distinctio praesentium eos asperiores numquam doloremque ipsum voluptate at corrupti quibusdam facere commodi minus quia. Nobis, repudiandae. Officia neque obcaecati quibusdam molestias inventore quidem harum magnam, totam aliquid blanditiis ut, pariatur iure minima eveniet assumenda! Itaque illo deleniti tenetur aperiam beatae consequuntur voluptates doloremque neque recusandae ipsa nulla eos, tempore odit quam ex molestiae consequatur at eum labore sint inventore. Excepturi modi quibusdam, fugit quod sit doloremque consequuntur tenetur atque blanditiis iure maiores ratione natus asperiores cum, ea velit repudiandae quos magnam itaque debitis odio ipsum! Molestiae voluptatibus voluptates vitae ipsam. Aperiam natus, necessitatibus et culpa sapiente ipsam, deserunt neque perferendis obcaecati earum nemo officiis voluptates quod voluptatibus debitis eligendi reprehenderit ipsa voluptatem quidem, sed magni nam ratione quae! Autem ex, commodi recusandae officia in ab porro beatae id necessitatibus odio soluta facere eaque et laborum. Cum dignissimos veniam quos hic minus fuga incidunt at maiores veritatis quaerat perspiciatis minima aliquid inventore a, id quam excepturi quae totam. Quo aperiam molestias dignissimos, eos, magni ab minus eaque quos veritatis laborum esse delectus nisi, harum eius rerum. Ad adipisci qui deserunt ullam esse eum fugit neque? Quae, corporis dignissimos commodi sequi velit blanditiis, at sit magnam dolorem voluptate molestiae! Labore fugiat deserunt, laboriosam voluptate nostrum error quo blanditiis corporis sunt culpa eaque a beatae vitae nemo voluptatibus voluptatem facilis aspernatur laudantium? Tenetur nostrum omnis, quae facilis aspernatur labore aliquam amet voluptatum, quasi odio eos earum possimus a quaerat aut numquam voluptates voluptatibus sequi minima. Nisi quis placeat dicta rerum tempore, voluptate sapiente hic sit. Similique nobis magnam minima id soluta asperiores tempore mollitia neque rem modi obcaecati sunt vitae nostrum molestiae sapiente ea, harum provident reprehenderit? Perferendis quidem facere est, iste animi praesentium iure hic recusandae voluptatum expedita exercitationem distinctio, earum nemo pariatur eveniet ad, velit non dicta ea nihil inventore temporibus in totam! Quo laborum qui alias odit accusantium. Quas a consequatur nostrum sunt incidunt quisquam in culpa nam corrupti nobis ipsum non molestias molestiae assumenda aspernatur obcaecati est minus ratione omnis inventore eos ducimus, rerum nulla dolorum! Nesciunt praesentium neque iusto maxime recusandae amet nam minima veniam quas tempora perspiciatis autem unde dolorum impedit suscipit aliquid, sint eum! Blanditiis unde facilis eum harum adipisci maxime animi repellendus officiis hic sequi cumque dolores voluptas vel, possimus rerum cum, obcaecati rem eos voluptatem. Sapiente maxime culpa assumenda ad dolorem, laudantium optio facilis quas doloremque cum quae, porro minima alias placeat dignissimos velit iure vero eligendi quibusdam consequatur nemo adipisci nobis. Libero, commodi nesciunt ipsa molestias perspiciatis aut soluta sed vel sit quibusdam rem, doloremque debitis modi perferendis, voluptas nisi recusandae repudiandae voluptatem assumenda laudantium? Laboriosam et deserunt tempora accusantium ipsum accusamus, corporis beatae mollitia praesentium, consectetur quis."
-              }
+              paragraphText={post.post_content}
             />
           </div>
         </div>
