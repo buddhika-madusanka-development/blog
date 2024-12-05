@@ -1,7 +1,9 @@
+"use client"
+
 import Tag from "@/app/components/Tag";
 import MainTitle from "@/app/components/Titles/MainTitle";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import BlogParagraph from "@/app/components/BlogParagraph";
 
 // Icons import using react icons
@@ -10,6 +12,8 @@ import { LiaCommentSolid } from "react-icons/lia";
 import { FiEye } from "react-icons/fi";
 import RecommonedBlogs from "@/app/components/RecommendBlogs/RecommonedBlogs";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { findSingleBlog } from "@/libs/actions/post.actions";
 
 const blog = {
   _id: "674dce16862a91cd3dfafdb8",
@@ -54,8 +58,12 @@ const blog = {
 
 const SinglBlog = ({ post = blog }) => {
 
+  const urlParams = useSearchParams();
+  const blogId = urlParams.get("blogId");
+
   const author_link = `http://localhost:3000/api/authors/${post.auth_id}`
   const tags = post.tags;
+
   
   return (
     <div>

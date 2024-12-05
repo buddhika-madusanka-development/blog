@@ -21,8 +21,21 @@ export async function GET(req) {
         if(!blog_post){
             throw new Error("There is no valid post....");
         }
+
+        const authorResponse = await fetch(`http://localhost:3000/api/authors/4ee2b4f2-bdbd-46f6-95d4-6be5f27835d6`);
+
+        if(!authorResponse.ok) {
+            throw new Error("Something went wrong in authors data fetching....")
+        }
+
+        const author = await authorResponse.json();
+
+        const post = {
+            ...blog_post.toObject(),
+            author : author
+        }
         
-        return NextResponse.json(blog_post, {status : 200})
+        return NextResponse.json(post, {status : 200})
         
     }
     catch(err){
