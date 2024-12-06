@@ -16,7 +16,7 @@ const Header = () => {
                 <GiHamburgerMenu className='h-6 w-6 md:hidden' />
             </div>
             <div className="w-full link-section flex flex-col  md:flex-row items-center gap-8 pt-5 md:pt-0 ">
-                <Link href={'#'}>Home</Link>
+                <Link href={'/'}>Home</Link>
                 <Link href={'#'}>Trending</Link>
             </div>
             <div className="pt-10 w-full user-section flex flex-col md:flex-row items-center justify-end gap-8 md:pt-0">
