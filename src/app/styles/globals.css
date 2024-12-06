@@ -8,18 +8,18 @@
 
 @layer base {
   :root {
-    --base-background-color : #fff;
-    --muted-background-color : #800080;
+    --base-background-color : #EDE8F5;
+    --muted-background-color : #7091E6;
     --card-background-color : #fff3ff;
 
     --base-foreground-color : #000;
     --muted-foreground-color : #fff;
 
-    --base-title-color : #18043b;
-    --muted-title-color : #3c096c;
+    --base-title-color : #19243f;
+    --muted-title-color : #324169;
 
-    --base-paragraph-color : ;
-    --mute-paragraph-color : ;
+    --base-paragraph-color : #6e7894 ;
+    --mute-paragraph-color : #ADBBDA;
 
     --base-button-background-color : #d26fd2 ;
     --base-button-text-color : ;
@@ -35,7 +35,7 @@
     --base-input-text-active-color : ;
     --base-input-border-active-color : ;
 
-    --tag-background-color :#d26fd2 ;
+    --tag-background-color :#C6E7FF ;
     --tag-text-color : ;
     --tag-border-color : ;
     --tag-hover-background-color : ;
