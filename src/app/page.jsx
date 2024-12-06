@@ -51,6 +51,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+
       setIsLoading(true);
 
       const blogResponse = await fetch("http://localhost:3000/api/blogs");
@@ -67,13 +68,19 @@ export default function Home() {
       filterLikedBlogs(blogs)
       suggestionBlogsFilter(blogs)
 
-      
+
       setIsLoading(false);
+
     };
 
     fetchBlogs();
   }, []);
 
+  if(isLoading) {
+    return <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
+  }
+  
+  
   return (
     <div className="relative">
       {/* Trending Blogs section ===> there show about most popular blogs couting the views */}

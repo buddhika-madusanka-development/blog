@@ -74,6 +74,7 @@ const SinglBlog = () => {
   if (!post) {
     return <div>Loading...</div>;
   }
+  
   const author_link = `http://localhost:3000/api/authors/${post.auth_id}`
   const tags = post.tags;
 
