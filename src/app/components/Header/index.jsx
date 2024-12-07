@@ -7,7 +7,8 @@ import Button from '../Button'
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
-const Header = () => {
+const Header = () => {    
+    
   return (
     <div className='pb-10 top-0 w-full min-h-20 h-auto bg-mute text-muted flex items-center md:pb-0'>
         <div className="w-11/12 m-auto md:flex md:items-center md:justify-between grid grid-cols-1">
@@ -20,7 +21,9 @@ const Header = () => {
                 <Link href={'#'}>Trending</Link>
             </div>
             <div className="pt-10 w-full user-section flex flex-col md:flex-row items-center justify-end gap-8 md:pt-0">
-                <ThemeTogller />
+                <div>
+                    <ThemeTogller />
+                </div>
                 <Link href={'#'}>Login</Link>
                 <Button buttonText={'Sign In'} link={'/signin'} />
             </div>
