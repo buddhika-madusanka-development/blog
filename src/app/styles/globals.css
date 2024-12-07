@@ -19,14 +19,14 @@
     --muted-title-color : #324169;
 
     --base-paragraph-color : #6e7894 ;
-    --mute-paragraph-color : #ADBBDA;
+    --mute-paragraph-color : #FF9843;
 
-    --base-button-background-color : #d26fd2 ;
-    --base-button-text-color : ;
-    --base-button-border-color : ;
-    --base-button-background-hover-color : ;
-    --base-button-text-hover-color : ;
-    --base-button-border-hover-color : ;
+    --base-button-background-color : #03346E ;
+    --base-button-text-color : #fff;
+    --base-button-border-color : #03346E;
+    --base-button-background-hover-color : #1c5397;
+    --base-button-text-hover-color : #fff;
+    --base-button-border-hover-color : #03346E;
 
     --base-input-background-color : ;
     --base-input-text-color : ;
@@ -36,11 +36,11 @@
     --base-input-border-active-color : ;
 
     --tag-background-color :#C6E7FF ;
-    --tag-text-color : ;
-    --tag-border-color : ;
-    --tag-hover-background-color : ;
-    --tag-hover-text-color : ;
-    --tag-hover-border-color : ;
+    --tag-text-color : #4b7a9c ;
+    --tag-border-color : #7da3d0;
+    --tag-hover-background-color : #03346E;
+    --tag-hover-text-color : #fff;
+    --tag-hover-border-color : #03346E;
   }
 }
 

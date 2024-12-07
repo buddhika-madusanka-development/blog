@@ -58,10 +58,12 @@ const DefaultBlogCard = ({ post = blog }) => {
         alt="sample"
         className="w-full h-auto aspect-video object-cover mb-5 rounded-xl"
       />
-      <div className="px-5">
-        <Link href={`http://localhost:3000/pages/singleBlog?blogId=${post.post_id}`}>
-          <SubTitle subTitleContent={post.post_title} />
-        </Link>
+      <div className="px-5 line">
+        <div className="post-card-title line-clamp-2">
+          <Link href={`http://localhost:3000/pages/singleBlog?blogId=${post.post_id}`}>
+            <SubTitle subTitleContent={post.post_title} />
+          </Link>
+        </div>
         <div className={`paragraph line-clamp-2 md:line-clamp-3`}>
           <Paragraph paragraphText={post.post_content} />
         </div>
@@ -72,7 +74,7 @@ const DefaultBlogCard = ({ post = blog }) => {
           ))}
         </div>
 
-        <div className="link-section mt-5">
+        <div className="link-section mt-5 text-mute-paragraph">
           <Link href={`http://localhost:3000/pages/singleBlog?blogId=${post.post_id}`}>Read More</Link>
         </div>
       </div>

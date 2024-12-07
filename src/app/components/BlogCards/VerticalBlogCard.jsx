@@ -73,7 +73,7 @@ const VerticalBlogCard = ({post = blog}) => {
                      ) )
                 }
             </div>
-            <div className="link-section mt-8">
+            <div className="link-section mt-8 text-mute-paragraph">
                 <Link href={`http://localhost:3000/pages/singleBlog?blogId=${post.post_id}`}>Read More</Link>
             </div>
         </div>
