@@ -48,7 +48,7 @@
     --muted-background-color : #7091E6;
     --card-background-color : #1f1f1f;
 
-    --base-foreground-color : #000;
+    --base-foreground-color : #ebebeb;
     --muted-foreground-color : #fff;
 
     --base-title-color : #fff;
@@ -74,9 +74,9 @@
     --tag-background-color :#3d4246 ;
     --tag-text-color : #dde5eb ;
     --tag-border-color : #5c6571;
-    --tag-hover-background-color : #03346E;
+    --tag-hover-background-color : #70777d;
     --tag-hover-text-color : #fff;
-    --tag-hover-border-color : #03346E;
+    --tag-hover-border-color : #70777d;
   }
 }
 
